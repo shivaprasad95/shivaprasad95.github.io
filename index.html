@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <style>
+      body {
+      background-color: #6d5f73;
+      font-family: Calibri;
+	  font-weight: bold;
+      }
+      h3 {
+      color:white;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 10px
+      }
+      .outerTable {
+      margin-left:auto;
+      margin-right:auto;
+      margin-top:40px;
+      width:500px;
+      }
+      .columnOne {
+      background-color: #3598DB;
+      width: 250px;
+      }
+      .columnTwo {
+      background-color: #2780B8;
+      width: 250px;
+      }
+      p {
+      color: white;
+	  font-size: 14px;
+      margin-left: 10px;
+      margin: 0 0 0 10px;
+      }
+      .button {
+      height: 1.8rem;
+      width: 12.2rem;
+	  color: white;
+	  background-color: #3E599E;
+	  border: none;
+      }
+      .submitButton {
+      height: 1.8rem;
+      width: 12.2rem;
+	  color: white;
+	  background-color: #3598DB;
+	  border: none;
+      }
+      .centerAlign {
+      color:white;
+      text-align: center;
+      }
+	  .textInput {
+	  height: 1.4rem;
+	  width: 12rem;
+	  }
+	  .paddingBottom {
+	  padding-bottom:1.5rem;
+	  }
+	  .nav ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #333;
+	}
+
+	.nav li {
+		float: left;
+	}
+
+	.nav li a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+
+	li a:hover {
+		background-color: #111;
+	}
+    </style>
+  </head>
+  <body>
+	<div class="nav">
+	<ul>
+	<li><a class="active" href="#home">Home</a></li>
+	<li><a href="#news">Weather Report</a></li>
+	<li><a href="#contact">Contact</a></li>
+	<li><a href="#about">About</a></li>
+	</ul>
+	</div>
+    <table class="outerTable">
+      <tbody><tr>
+        <td class="columnOne">
+          <table cellpadding="5">
+            <tbody><tr>
+              <td>
+                <h3>Weather Forecast</h3>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="paddingBottom">Simple. Informative. Accurate</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>&gt; Based on darksky API</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>&gt; Improved location</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="paddingBottom">&gt; Uses Google API</p>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+        <td class="columnTwo">
+          <table align="center" cellpadding="5">
+            <tbody><tr>
+              <td class="centerAlign">
+                Check weather condition
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" id="areaId" class="textInput" placeholder=" Area or Country">
+              </td>
+            </tr>
+            
+            <tr>
+              <td>
+                <button role="button" id="search" class="submitButton">Fetch It!</button>
+              </td>
+            </tr>
+            
+          </tbody></table>
+        </td>
+      </tr>
+    </tbody></table>
+	<table class="outerTable" style="margin-top: 10px">
+      <tbody><tr>
+        <td class="columnOne" style = "background-color: #a735db">
+          <table cellpadding="5">
+            <tbody><tr>
+              <td>
+                <h3 id="currentLocation">Please Enter Location above</h3>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p id = "weatherToday" class="paddingBottom"></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p id="currentTemperature"></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p id="currentWindSpeed"></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p id="currentHumidity"class="paddingBottom"></p>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+	</table>
+	<table class="outerTable" style="margin-top: 10px">
+      <tbody><tr>
+        <td class="columnOne" style = "background-color: #6f3a5e">
+          <table cellpadding="5">
+            <tbody>
+            <tr>
+              <td>
+                <p id = "weather1" class="paddingBottom"></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p id="temperature1"></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p id="windSpeed1"></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p id="humidity1"class="paddingBottom"></p>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+        <td class="columnTwo" style = "background-color: #b82737">
+          <table align="center" cellpadding="5">
+            <table cellpadding="5">
+            <tbody>
+            <tr>
+              <td>
+                <p id = "weather2" class="paddingBottom"></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p id="temperature2"></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p id="windSpeed2"></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p id="humidity2"class="paddingBottom"> </p>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </tbody></table>
+  
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOSBuvmPnFRH-8QP64Gl9zuV1kyZfPEy4"
+  type="text/javascript">
+</script>
+
+<script>
+ jQuery(document).ready(function($) {
+	var latitude = "";
+	var longitude = "";
+	var domn = "https://api.darksky.net/forecast";
+	var secretKey = "bdf80a7f2405cd11590f9a68c3c1a63c";
+	var completeURI = "";
+	
+	$( "#search" ).click(function() {
+	//alert( "Handler for .click() called." );
+		var geocoder = new google.maps.Geocoder();
+		var address = $('#areaId').val()
+		if(address === null || address === "") {
+			alert("Please Enter the location");
+		} else {
+			geocoder.geocode( { 'address': address}, function(results, status) {
+				if (status == google.maps.GeocoderStatus.OK) {
+					latitude = results[0].geometry.location.lat();
+					longitude = results[0].geometry.location.lng();
+					completeURI = domn+"/"+secretKey+"/"+latitude+","+longitude;
+					console.log(latitude+" "+longitude);
+					$.ajax({
+					url : completeURI,
+					dataType : "jsonp",
+					success : function(parsed_json) {
+					var location = parsed_json['timezone'];
+					var temp_f = parsed_json['currently']['temperature'];
+					var cWSpeed = parsed_json['currently']['windSpeed'];
+					var cHumid = parsed_json['currently']['humidity'];
+					
+					var temp1 = parsed_json['daily']['data']['0']['temperatureMax'];
+					console.log(temp1);
+					var cWSpeed1 = parsed_json['daily']['data']['0']['windSpeed'];
+					var cHumid1 = parsed_json['daily']['data']['0']['humidity'];
+					
+					var temp2 = parsed_json['daily']['data']['1']['temperatureMax'];
+					console.log(temp1);
+					var cWSpeed2 = parsed_json['daily']['data']['1']['windSpeed'];
+					var cHumid2 = parsed_json['daily']['data']['1']['humidity'];
+					
+					var complete = ("Current temperature in " + location + " is: " + temp_f);
+					console.log(parsed_json);
+					$('#currentLocation').html("<h3> Location:  " + location + "</h3>");
+					$('#weatherToday').html("<p> Weather Today</p>");
+					$('#currentLocation').html("<h3> Location:  " + location + "</h3>");
+					$('#currentTemperature').html("<p> Temperature(F):  " + temp_f + "</p>");
+					$('#currentWindSpeed').html("<p> Wind Speed:  " + cWSpeed + "</p>");
+					$('#currentHumidity').html("<p> Humidity:  " + cHumid + "</p>");
+					
+					$('#weather1').html("<h3> Weather Tomorrow</h3>");
+					$('#temperature1').html("<p> Temperature(F):  " + temp1 + "</p>");
+					$('#windSpeed1').html("<p> Wind Speed:  " + cWSpeed1 + "</p>");
+					$('#humidity1').html("<p> Humidity:  " + cHumid1 + "</p>");
+					
+					$('#weather2').html("<h3> Weather Day after Tomorrow</h3>");
+					$('#temperature2').html("<p> Temperature(F):  " + temp2 + "</p>");
+					$('#windSpeed2').html("<p> Wind Speed:  " + cWSpeed2 + "</p>");
+					$('#humidity2').html("<p> Humidity:  " + cHumid2 + "</p>");
+					
+				}
+			});
+				} 
+			}); 
+			
+		}
+	});
+ });
+ 
+
+</script>
+
+</html>
